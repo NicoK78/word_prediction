@@ -1,6 +1,7 @@
 package fr.esgi.tp;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public class SuggestionsReader implements IRecommender {
     
     public SuggestionsReader(String path, String language) {
         this.language = language;
-        this.path = getClass().getClassLoader().getResource(path).getFile().replace("%20", " ");
+        this.path = getClass().getClassLoader().getResource(path).getFile();
     }
 
     @Override

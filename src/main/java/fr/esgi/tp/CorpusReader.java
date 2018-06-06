@@ -28,7 +28,7 @@ public class CorpusReader implements AutoCloseable, Iterator<String>, Iterable<S
      * @param localPath the path of the file in src/main/resources
      */
     public CorpusReader(String localPath) {
-        final String absolutePath = getClass().getClassLoader().getResource(localPath).getFile().replace("%20", " ");
+        final String absolutePath = getClass().getClassLoader().getResource(localPath).getFile();
         try {
             reader = new BufferedReader(new FileReader(absolutePath));
             String newLine = nextLine();
